@@ -1,7 +1,6 @@
 import { describe, test, expect } from "vitest";
-import { createDatabase } from "../../packages/core/services/database/db";
 import { postgresUrl, postgresConfig } from "../test_config";
-import { EntityModels, EntityModelFactory } from "../../packages/core/main";
+import { EntityModels, EntityModelFactory, createDatabase } from "../../packages/core/main";
 
 createDatabase({
 	postgresUrl,
