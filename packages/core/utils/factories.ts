@@ -17,7 +17,15 @@ abstract class Factory {
 	): NewLedger[] | NewAccount[] | NewUnitType[] | NewEntityModel[] | NewTransactionModel[];
 }
 
+/**
+ * Factory for creating fake ledger objects.
+ */
 export class LedgerFactory extends Factory {
+	/**
+	 * Creates a new ledger object with random data.
+	 * @param type Optional type argument, not used in this implementation.
+	 * @returns A new ledger object.
+	 */
 	public make(type?: string): NewLedger {
 		// Choose to not do anything with the type argument
 		type;
@@ -32,12 +40,22 @@ export class LedgerFactory extends Factory {
 		};
 	}
 
+	/**
+	 * Creates multiple ledger objects.
+	 * @param count The number of ledgers to create.
+	 * @returns An array of new ledger objects.
+	 */
 	public makeMany(count: number) {
 		return Array.from({ length: count }, () => this.make());
 	}
 }
 
 export class AccountFactory extends Factory {
+	/**
+	 * Creates a new account object with random data.
+	 * @param type 
+	 * @returns 
+	 */
 	public make(type?: string): NewAccount {
 		// Choose to not do anything with the type argument
 		type;
@@ -53,12 +71,23 @@ export class AccountFactory extends Factory {
 		};
 	}
 
+	/**
+	 * Creates multiple account objects.
+	 * @param count The number of accounts to create.
+	 * @param type Optional type argument, not used in this implementation.
+	 * @returns An array of new account objects.
+	 */
 	public makeMany(count: number, type?: string) {
 		return Array.from({ length: count }, () => this.make(type));
 	}
 }
 
 export class UnitTypeFactory extends Factory {
+	/**
+	 * Creates a new unit type object with random data.
+	 * @param type Optional type argument, not used in this implementation.
+	 * @returns A new unit type object.
+	 */
 	public make(type?: string): NewUnitType {
 		type;
 
@@ -70,12 +99,23 @@ export class UnitTypeFactory extends Factory {
 		};
 	}
 
+	/**
+	 * Creates multiple unit type objects.
+	 * @param count The number of unit types to create.
+	 * @param type Optional type argument, not used in this implementation.
+	 * @returns An array of new unit type objects.
+	 */
 	public makeMany(count: number, type?: string) {
 		return Array.from({ length: count }, () => this.make(type));
 	}
 }
 
 export class EntityModelFactory extends Factory {
+	/**
+	 * Creates a new entity model object with random data.
+	 * @param type Optional type argument, not used in this implementation.
+	 * @returns 
+	 */
 	public make(type?: string): NewEntityModel {
 		type;
 
@@ -87,12 +127,23 @@ export class EntityModelFactory extends Factory {
 		};
 	}
 
+	/**
+	 * Creates multiple entity model objects.
+	 * @param count The number of entity models to create.
+	 * @param type Optional type argument, not used in this implementation.
+	 * @returns An array of new entity model objects.
+	 */
 	public makeMany(count: number, type?: string) {
 		return Array.from({ length: count }, () => this.make(type));
 	}
 }
 
 export class TransactionModelFactory extends Factory {
+	/**
+	 * Creates a new transaction model object with random data.
+	 * @param type Optional type argument, not used in this implementation.
+	 * @returns A new transaction model object.
+	 */
 	public make(type?: string): NewTransactionModel {
 		type;
 
@@ -104,6 +155,12 @@ export class TransactionModelFactory extends Factory {
 		};
 	}
 
+	/**
+	 * Creates multiple transaction model objects.
+	 * @param count The number of transaction models to create.
+	 * @param type Optional type argument, not used in this implementation.
+	 * @returns An array of new transaction model objects.
+	 */
 	public makeMany(count: number, type?: string) {
 		return Array.from({ length: count }, () => this.make(type));
 	}

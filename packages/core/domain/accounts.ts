@@ -33,6 +33,11 @@ async function altIdIsAvailable(alt_id: string): Promise<boolean> {
 	return await valueIsAvailable(kl_core_accounts, 'alt_id', alt_id);
 }
 
+/**
+ * Validate the creation of a new account
+ * @param data
+ * @returns Promise<z.SafeParseResult<NewAccount, z.ZodError>>
+ */
 async function validateCreation(data: NewAccount) {
 	const db = getDbInstance();
 	const validationSchema = z
@@ -141,7 +146,7 @@ async function validateCreation(data: NewAccount) {
  * @param data
  * @returns Promise<InferSelectModel<typeof accounts>>
  */
-async function create(data: NewAccount) {
+async function create(data: NewAccount)  {
 	const db = getDbInstance();
 	const result = await db.insert(kl_core_accounts).values(data).returning();
 	return result[0];
