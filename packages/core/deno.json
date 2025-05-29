@@ -1,5 +1,5 @@
 {
-	"name": "@kkitledger/core",
+	"name": "@kitledger/core",
 	"version": "0.0.1",
 	"exports": "./main.ts",
 	"imports": {
