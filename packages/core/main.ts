@@ -10,12 +10,5 @@ export { UnitTypes } from './domain/unit_types.ts';
 /**
  * Types Utils and Validation functions
  */
-export * from './types/index.ts';
-export * from './utils/factories.ts';
-export * from './utils/validation.ts';
-
-/**
- * Temporary Exports from the DB service
- */
-export { createDatabase, getDbInstance, getQueryClientInstance } from './services/database/db.ts';
-export type { KitledgerDatabase } from './services/database/db.ts';
+export * from './db/factories.ts';
+export * from './db/schema.ts';
