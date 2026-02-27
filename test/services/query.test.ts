@@ -1,5 +1,4 @@
-import { executeQuery } from "../../server/services/database/query.ts";
-import { Query } from "@kitledger/query";
+import { executeQuery, type Query } from "../../server/services/database/query.ts";
 import { AccountFactory, LedgerFactory } from "../../server/domain/factories/ledger_factories.ts";
 import { createLedger } from "../../server/domain/actions/ledger_actions.ts";
 import { createAccount } from "../../server/domain/actions/account_actions.ts";

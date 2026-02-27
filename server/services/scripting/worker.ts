@@ -1,4 +1,4 @@
-import type { HostToWorkerMessage, WorkerToHostMessage } from "@kitledger/actions/runtime";
+import type { HostToWorkerMessage, WorkerToHostMessage } from "./runtime.ts";
 import type { ExecuteScriptArgs } from "./runtime.ts";
 
 self.onmessage = async (event: MessageEvent<ExecuteScriptArgs>) => {

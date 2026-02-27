@@ -19,8 +19,6 @@
     "jsr:@valibot/valibot@^1.1.0": "1.1.0",
     "npm:@deno/vite-plugin@^1.0.5": "1.0.5_vite@7.1.11__picomatch@4.0.3_@types+node@24.2.0",
     "npm:@faker-js/faker@^9.9.0": "9.9.0",
-    "npm:@kitledger/actions@^0.0.14": "0.0.14",
-    "npm:@kitledger/query@^0.0.14": "0.0.14_valibot@1.1.0",
     "npm:@mantine/charts@^8.3.5": "8.3.5_@mantine+core@8.3.5__@mantine+hooks@8.3.5___react@19.2.0__react@19.2.0__react-dom@19.2.0___react@19.2.0__@types+react@19.2.2_@mantine+hooks@8.3.5__react@19.2.0_react@19.2.0_react-dom@19.2.0__react@19.2.0_recharts@3.3.0__react@19.2.0__react-dom@19.2.0___react@19.2.0__react-is@19.2.0__react-redux@9.2.0___@types+react@19.2.2___react@19.2.0___redux@5.0.1__@types+react@19.2.2_@types+react@19.2.2",
     "npm:@mantine/code-highlight@^8.3.5": "8.3.5_@mantine+core@8.3.5__@mantine+hooks@8.3.5___react@19.2.0__react@19.2.0__react-dom@19.2.0___react@19.2.0__@types+react@19.2.2_@mantine+hooks@8.3.5__react@19.2.0_react@19.2.0_react-dom@19.2.0__react@19.2.0_@types+react@19.2.2",
     "npm:@mantine/core@^8.3.5": "8.3.5_@mantine+hooks@8.3.5__react@19.2.0_react@19.2.0_react-dom@19.2.0__react@19.2.0_@types+react@19.2.2",
@@ -358,16 +356,10 @@
         "@babel/helper-validator-identifier"
       ]
     },
-    "@deno/vite-plugin@1.0.5_vite@7.1.11__picomatch@4.0.3": {
-      "integrity": "sha512-tLja5n4dyMhcze1NzvSs2iiriBymfBlDCZIrjMTxb9O2ru0gvmV6mn5oBD2teNw5Sd92cj3YJzKwsAs8tMJXlg==",
-      "dependencies": [
-        "vite@7.1.11_picomatch@4.0.3"
-      ]
-    },
     "@deno/vite-plugin@1.0.5_vite@7.1.11__picomatch@4.0.3_@types+node@24.2.0": {
       "integrity": "sha512-tLja5n4dyMhcze1NzvSs2iiriBymfBlDCZIrjMTxb9O2ru0gvmV6mn5oBD2teNw5Sd92cj3YJzKwsAs8tMJXlg==",
       "dependencies": [
-        "vite@7.1.11_picomatch@4.0.3_@types+node@24.2.0"
+        "vite"
       ]
     },
     "@drizzle-team/brocli@0.10.2": {
@@ -711,28 +703,6 @@
         "@jridgewell/resolve-uri",
         "@jridgewell/sourcemap-codec"
       ]
-    },
-    "@kitledger/actions@0.0.14": {
-      "integrity": "sha512-HY8x4A3/10YY8RHprDu+uqEpakM1eNC4IsogYS3MDQobK9xRz/NDcEFd4lxYqnQVG1cDtJYXaY4iMUfAplKnOQ==",
-      "dependencies": [
-        "@kitledger/query@0.0.13_valibot@1.1.0",
-        "@kitledger/sdk"
-      ]
-    },
-    "@kitledger/query@0.0.13_valibot@1.1.0": {
-      "integrity": "sha512-DWjuAKxrbdI+BS0o3UEYpw72y3o3brIQ52/FWPu6BBTzbknFnB4VNgoWyUEtc9ANCOeJKTvESh8VZTz+TVdsnQ==",
-      "dependencies": [
-        "valibot"
-      ]
-    },
-    "@kitledger/query@0.0.14_valibot@1.1.0": {
-      "integrity": "sha512-kjYQVDd/gpArClm1qQJD7hmPrEz34XC0rigKAnshuD+QPC6VrPR6DYnN5urPpUMKa1tZkZGBZW2oxGFmoV6NUw==",
-      "dependencies": [
-        "valibot"
-      ]
-    },
-    "@kitledger/sdk@0.0.9": {
-      "integrity": "sha512-wVnrAT5kURelc8K9uGzu03pZXIStS4TLOsLLV2rQZHISfWxamQvb7zbHOFu2A926YyJ7cMzOz/fiKjk8LLc7lQ=="
     },
     "@mantine/charts@8.3.5_@mantine+core@8.3.5__@mantine+hooks@8.3.5___react@19.2.0__react@19.2.0__react-dom@19.2.0___react@19.2.0__@types+react@19.2.2_@mantine+hooks@8.3.5__react@19.2.0_react@19.2.0_react-dom@19.2.0__react@19.2.0_recharts@3.3.0__react@19.2.0__react-dom@19.2.0___react@19.2.0__react-is@19.2.0__react-redux@9.2.0___@types+react@19.2.2___react@19.2.0___redux@5.0.1__@types+react@19.2.2_@types+react@19.2.2": {
       "integrity": "sha512-jXeItISiGZbRPG6YTfh+q4Ii2DSce3Vl9dBX1spbtYz+qnJ9TE3vLUlRA3Vn2JXHR1Nka1CtiGGl26NilC81tQ==",
@@ -1088,24 +1058,14 @@
         "react"
       ]
     },
-    "@tanstack/react-router-devtools@1.133.27_@tanstack+react-router@1.133.27__react@19.2.0__react-dom@19.2.0___react@19.2.0_react@19.2.0_react-dom@19.2.0__react@19.2.0": {
-      "integrity": "sha512-K1uDpqzvdB0bf5J00rH3pMHE0IOB0ke8Ej0VZ43loRACIY7YqqYlOFvKFVxQwI8GTGzxNs5J9uJ7Ms0+w0eH2A==",
-      "dependencies": [
-        "@tanstack/react-router",
-        "@tanstack/router-devtools-core@1.133.27_@tanstack+router-core@1.133.27__seroval@1.3.2_solid-js@1.9.9__seroval@1.3.2_tiny-invariant@1.3.3",
-        "react",
-        "react-dom",
-        "vite@7.1.11_picomatch@4.0.3"
-      ]
-    },
     "@tanstack/react-router-devtools@1.133.27_@tanstack+react-router@1.133.27__react@19.2.0__react-dom@19.2.0___react@19.2.0_react@19.2.0_react-dom@19.2.0__react@19.2.0_@types+node@24.2.0": {
       "integrity": "sha512-K1uDpqzvdB0bf5J00rH3pMHE0IOB0ke8Ej0VZ43loRACIY7YqqYlOFvKFVxQwI8GTGzxNs5J9uJ7Ms0+w0eH2A==",
       "dependencies": [
         "@tanstack/react-router",
-        "@tanstack/router-devtools-core@1.133.27_@tanstack+router-core@1.133.27__seroval@1.3.2_solid-js@1.9.9__seroval@1.3.2_tiny-invariant@1.3.3_@types+node@24.2.0",
+        "@tanstack/router-devtools-core",
         "react",
         "react-dom",
-        "vite@7.1.11_picomatch@4.0.3_@types+node@24.2.0"
+        "vite"
       ]
     },
     "@tanstack/react-router@1.133.27_react@19.2.0_react-dom@19.2.0__react@19.2.0": {
@@ -1142,17 +1102,6 @@
         "tiny-warning"
       ]
     },
-    "@tanstack/router-devtools-core@1.133.27_@tanstack+router-core@1.133.27__seroval@1.3.2_solid-js@1.9.9__seroval@1.3.2_tiny-invariant@1.3.3": {
-      "integrity": "sha512-mYTQnZ8yQbIGNOmLcYv/V8q96qGH+wixgJUeNqUdbZ3/TrzVLaSENRId5ZXD8mx8o2Ljqy2BwZq5d+zDDaKseA==",
-      "dependencies": [
-        "@tanstack/router-core",
-        "clsx",
-        "goober",
-        "solid-js",
-        "tiny-invariant",
-        "vite@7.1.11_picomatch@4.0.3"
-      ]
-    },
     "@tanstack/router-devtools-core@1.133.27_@tanstack+router-core@1.133.27__seroval@1.3.2_solid-js@1.9.9__seroval@1.3.2_tiny-invariant@1.3.3_@types+node@24.2.0": {
       "integrity": "sha512-mYTQnZ8yQbIGNOmLcYv/V8q96qGH+wixgJUeNqUdbZ3/TrzVLaSENRId5ZXD8mx8o2Ljqy2BwZq5d+zDDaKseA==",
       "dependencies": [
@@ -1161,7 +1110,7 @@
         "goober",
         "solid-js",
         "tiny-invariant",
-        "vite@7.1.11_picomatch@4.0.3_@types+node@24.2.0"
+        "vite"
       ]
     },
     "@tanstack/router-generator@1.133.27": {
@@ -1175,31 +1124,6 @@
         "source-map@0.7.6",
         "tsx",
         "zod"
-      ]
-    },
-    "@tanstack/router-plugin@1.133.27_@tanstack+react-router@1.133.27__react@19.2.0__react-dom@19.2.0___react@19.2.0_vite@7.1.11__picomatch@4.0.3_@babel+core@7.28.4_react@19.2.0_react-dom@19.2.0__react@19.2.0": {
-      "integrity": "sha512-E3WdABr7Vm9UijQKSjoP2Pvq5l1m8cIm/YZIDbcJ3zVQpTKMtSVgWzP1lQUtsUBrU21PBPHsOhc1+ERt832pKQ==",
-      "dependencies": [
-        "@babel/core",
-        "@babel/plugin-syntax-jsx",
-        "@babel/plugin-syntax-typescript",
-        "@babel/template",
-        "@babel/traverse",
-        "@babel/types",
-        "@tanstack/react-router",
-        "@tanstack/router-core",
-        "@tanstack/router-generator",
-        "@tanstack/router-utils",
-        "@tanstack/virtual-file-routes",
-        "babel-dead-code-elimination",
-        "chokidar",
-        "unplugin",
-        "vite@7.1.11_picomatch@4.0.3",
-        "zod"
-      ],
-      "optionalPeers": [
-        "@tanstack/react-router",
-        "vite@7.1.11_picomatch@4.0.3"
       ]
     },
     "@tanstack/router-plugin@1.133.27_@tanstack+react-router@1.133.27__react@19.2.0__react-dom@19.2.0___react@19.2.0_vite@7.1.11__picomatch@4.0.3_@babel+core@7.28.4_react@19.2.0_react-dom@19.2.0__react@19.2.0_@types+node@24.2.0": {
@@ -1219,12 +1143,12 @@
         "babel-dead-code-elimination",
         "chokidar",
         "unplugin",
-        "vite@7.1.11_picomatch@4.0.3_@types+node@24.2.0",
+        "vite",
         "zod"
       ],
       "optionalPeers": [
         "@tanstack/react-router",
-        "vite@7.1.11_picomatch@4.0.3_@types+node@24.2.0"
+        "vite"
       ]
     },
     "@tanstack/router-utils@1.133.19_@babel+core@7.28.4": {
@@ -1341,18 +1265,6 @@
     "@types/use-sync-external-store@0.0.6": {
       "integrity": "sha512-zFDAD+tlpf2r4asuHEj0XH6pY6i0g5NeAHPn+15wk3BV6JA69eERFXC1gyGThDkVa1zCyKr5jox1+2LbV/AMLg=="
     },
-    "@vitejs/plugin-react@5.0.4_vite@7.1.11__picomatch@4.0.3_@babel+core@7.28.4": {
-      "integrity": "sha512-La0KD0vGkVkSk6K+piWDKRUyg8Rl5iAIKRMH0vMJI0Eg47bq1eOxmoObAaQG37WMW9MSyk7Cs8EIWwJC1PtzKA==",
-      "dependencies": [
-        "@babel/core",
-        "@babel/plugin-transform-react-jsx-self",
-        "@babel/plugin-transform-react-jsx-source",
-        "@rolldown/pluginutils",
-        "@types/babel__core",
-        "react-refresh",
-        "vite@7.1.11_picomatch@4.0.3"
-      ]
-    },
     "@vitejs/plugin-react@5.0.4_vite@7.1.11__picomatch@4.0.3_@babel+core@7.28.4_@types+node@24.2.0": {
       "integrity": "sha512-La0KD0vGkVkSk6K+piWDKRUyg8Rl5iAIKRMH0vMJI0Eg47bq1eOxmoObAaQG37WMW9MSyk7Cs8EIWwJC1PtzKA==",
       "dependencies": [
@@ -1362,7 +1274,7 @@
         "@rolldown/pluginutils",
         "@types/babel__core",
         "react-refresh",
-        "vite@7.1.11_picomatch@4.0.3_@types+node@24.2.0"
+        "vite"
       ]
     },
     "acorn@8.15.0": {
@@ -2389,9 +2301,6 @@
     "util-deprecate@1.0.2": {
       "integrity": "sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw=="
     },
-    "valibot@1.1.0": {
-      "integrity": "sha512-Nk8lX30Qhu+9txPYTwM0cFlWLdPFsFr6LblzqIySfbZph9+BFsAHsNvHOymEviUepeIW6KFHzpX8TKhbptBXXw=="
-    },
     "victory-vendor@37.3.6": {
       "integrity": "sha512-SbPDPdDBYp+5MJHhBCAyI7wKM3d5ivekigc2Dk2s7pgbZ9wIgIBYGVw4zGHBml/qTFbexrofXW6Gu4noGxrOwQ==",
       "dependencies": [
@@ -2410,21 +2319,6 @@
         "d3-time",
         "d3-timer"
       ]
-    },
-    "vite@7.1.11_picomatch@4.0.3": {
-      "integrity": "sha512-uzcxnSDVjAopEUjljkWh8EIrg6tlzrjFUfMcR1EVsRDGwf/ccef0qQPRyOrROwhrTDaApueq+ja+KLPlzR/zdg==",
-      "dependencies": [
-        "esbuild@0.25.11",
-        "fdir",
-        "picomatch@4.0.3",
-        "postcss",
-        "rollup",
-        "tinyglobby"
-      ],
-      "optionalDependencies": [
-        "fsevents"
-      ],
-      "bin": true
     },
     "vite@7.1.11_picomatch@4.0.3_@types+node@24.2.0": {
       "integrity": "sha512-uzcxnSDVjAopEUjljkWh8EIrg6tlzrjFUfMcR1EVsRDGwf/ccef0qQPRyOrROwhrTDaApueq+ja+KLPlzR/zdg==",
@@ -2469,8 +2363,6 @@
       "jsr:@valibot/valibot@^1.1.0",
       "npm:@deno/vite-plugin@^1.0.5",
       "npm:@faker-js/faker@^9.9.0",
-      "npm:@kitledger/actions@^0.0.14",
-      "npm:@kitledger/query@^0.0.14",
       "npm:@mantine/charts@^8.3.5",
       "npm:@mantine/code-highlight@^8.3.5",
       "npm:@mantine/core@^8.3.5",

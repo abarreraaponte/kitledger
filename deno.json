@@ -18,8 +18,6 @@
 		"@deno/vite-plugin": "npm:@deno/vite-plugin@^1.0.5",
 		"@faker-js/faker": "npm:@faker-js/faker@^9.9.0",
 		"@hono/hono": "jsr:@hono/hono@^4.8.4",
-		"@kitledger/actions": "npm:@kitledger/actions@^0.0.14",
-		"@kitledger/query": "npm:@kitledger/query@^0.0.14",
 		"@mantine/charts": "npm:@mantine/charts@^8.3.5",
 		"@mantine/code-highlight": "npm:@mantine/code-highlight@^8.3.5",
 		"@mantine/core": "npm:@mantine/core@^8.3.5",
