@@ -7,7 +7,6 @@ import { workerPool } from "../../services/workers/pool.ts";
 import { availableWorkerTasks } from "../../services/workers/worker.ts";
 import { type User } from "../types/auth_types.ts";
 import { system_permissions, users } from "../../services/database/schema.ts";
-import { eq, and, isNotNull } from "drizzle-orm";
 
 export type NewSuperUser = Pick<User, "id" | "first_name" | "last_name" | "email"> & {
 	password: string;
@@ -22,7 +21,7 @@ export async function createSuperUser(
 	const newSuperUser: NewSuperUser | null = await db.transaction(async (tx) => {
 
 		// Check if a super user exists, regardless of email.
-		const existingAdmin = await tx
+		/*const existingAdmin = await tx
 			.select()
 			.from(system_permissions)
 			.where(
@@ -36,7 +35,7 @@ export async function createSuperUser(
 		if (existingAdmin.length > 0) {
 			console.error("A super user already exists. Aborting creation.");
 			return null;
-		}
+		}*/
 
 		try {
 			/**
