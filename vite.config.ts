@@ -1,23 +1,14 @@
 import { defineConfig } from "vite";
 import deno from "@deno/vite-plugin";
-import react from "@vitejs/plugin-react";
-import { tanstackRouter } from "@tanstack/router-plugin/vite";
+import vue from '@vitejs/plugin-vue'
 
 // https://vite.dev/config/
 export default defineConfig({
 	plugins: [
 		deno(),
-		tanstackRouter({
-			target: "react",
-			autoCodeSplitting: true,
-			routesDirectory: "./client/routes",
-			generatedRouteTree: "routeTree.gen.ts",
-			addExtensions: true,
-		}),
-		react(),
+		vue(),
 	],
 	root: "client",
-	base: "/app",
 	server: {
 		proxy: {
 			"/api": "http://localhost:8888",

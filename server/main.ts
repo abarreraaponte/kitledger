@@ -46,16 +46,9 @@ if (args.length === 0 || args[0] === "serve") {
 	/**
 	 * Serve the client's index.html file.
 	 */
-	server.get("/app/*", async (c) => {
+	server.get("/*", async (c) => {
 		const html = await Deno.readTextFile(join(String(import.meta.dirname), "../dist/client/index.html"));
 		return c.html(html);
-	});
-
-	/**
-	 * Redirect root to /app
-	 */
-	server.get("/", (c) => {
-		return c.redirect("/app");
 	});
 
 	Deno.serve(
