@@ -16,10 +16,9 @@
     "jsr:@std/path@^1.1.1": "1.1.1",
     "jsr:@std/testing@^1.0.15": "1.0.15",
     "jsr:@std/uuid@^1.0.9": "1.0.9",
-    "jsr:@valibot/valibot@^1.1.0": "1.1.0",
-    "npm:@deno/vite-plugin@^1.0.5": "1.0.5_vite@7.1.11__picomatch@4.0.3_@types+node@24.2.0",
+    "npm:@deno/vite-plugin@^1.0.5": "1.0.5_vite@7.1.11__@types+node@24.2.0__picomatch@4.0.3_@types+node@24.2.0",
     "npm:@faker-js/faker@^9.9.0": "9.9.0",
-    "npm:@mantine/charts@^8.3.5": "8.3.5_@mantine+core@8.3.5__@mantine+hooks@8.3.5___react@19.2.0__react@19.2.0__react-dom@19.2.0___react@19.2.0__@types+react@19.2.2_@mantine+hooks@8.3.5__react@19.2.0_react@19.2.0_react-dom@19.2.0__react@19.2.0_recharts@3.3.0__react@19.2.0__react-dom@19.2.0___react@19.2.0__react-is@19.2.0__react-redux@9.2.0___@types+react@19.2.2___react@19.2.0___redux@5.0.1__@types+react@19.2.2_@types+react@19.2.2",
+    "npm:@mantine/charts@^8.3.5": "8.3.5_@mantine+core@8.3.5__@mantine+hooks@8.3.5___react@19.2.0__react@19.2.0__react-dom@19.2.0___react@19.2.0__@types+react@19.2.2_@mantine+hooks@8.3.5__react@19.2.0_react@19.2.0_react-dom@19.2.0__react@19.2.0_recharts@3.3.0__react@19.2.0__react-dom@19.2.0___react@19.2.0__react-is@16.13.1__react-redux@9.2.0___@types+react@19.2.2___react@19.2.0___redux@5.0.1__@types+react@19.2.2_@types+react@19.2.2",
     "npm:@mantine/code-highlight@^8.3.5": "8.3.5_@mantine+core@8.3.5__@mantine+hooks@8.3.5___react@19.2.0__react@19.2.0__react-dom@19.2.0___react@19.2.0__@types+react@19.2.2_@mantine+hooks@8.3.5__react@19.2.0_react@19.2.0_react-dom@19.2.0__react@19.2.0_@types+react@19.2.2",
     "npm:@mantine/core@^8.3.5": "8.3.5_@mantine+hooks@8.3.5__react@19.2.0_react@19.2.0_react-dom@19.2.0__react@19.2.0_@types+react@19.2.2",
     "npm:@mantine/dates@^8.3.5": "8.3.5_@mantine+core@8.3.5__@mantine+hooks@8.3.5___react@19.2.0__react@19.2.0__react-dom@19.2.0___react@19.2.0__@types+react@19.2.2_@mantine+hooks@8.3.5__react@19.2.0_dayjs@1.11.18_react@19.2.0_react-dom@19.2.0__react@19.2.0_@types+react@19.2.2",
@@ -33,13 +32,14 @@
     "npm:@tanstack/react-query@^5.90.5": "5.90.5_react@19.2.0",
     "npm:@tanstack/react-router-devtools@^1.133.27": "1.133.27_@tanstack+react-router@1.133.27__react@19.2.0__react-dom@19.2.0___react@19.2.0_react@19.2.0_react-dom@19.2.0__react@19.2.0_@types+node@24.2.0",
     "npm:@tanstack/react-router@^1.133.27": "1.133.27_react@19.2.0_react-dom@19.2.0__react@19.2.0",
-    "npm:@tanstack/router-plugin@^1.133.27": "1.133.27_@tanstack+react-router@1.133.27__react@19.2.0__react-dom@19.2.0___react@19.2.0_vite@7.1.11__picomatch@4.0.3_@babel+core@7.28.4_react@19.2.0_react-dom@19.2.0__react@19.2.0_@types+node@24.2.0",
+    "npm:@tanstack/router-plugin@^1.133.27": "1.133.27_@tanstack+react-router@1.133.27__react@19.2.0__react-dom@19.2.0___react@19.2.0_vite@7.1.11__@types+node@24.2.0__picomatch@4.0.3_@babel+core@7.28.4_react@19.2.0_react-dom@19.2.0__react@19.2.0_@types+node@24.2.0",
     "npm:@types/node@*": "24.2.0",
     "npm:@types/react-dom@^19.1.9": "19.2.2_@types+react@19.2.2",
     "npm:@types/react@^19.1.13": "19.2.2",
-    "npm:@vitejs/plugin-react@^5.0.2": "5.0.4_vite@7.1.11__picomatch@4.0.3_@babel+core@7.28.4_@types+node@24.2.0",
+    "npm:@vitejs/plugin-react@^5.0.2": "5.0.4_vite@7.1.11__@types+node@24.2.0__picomatch@4.0.3_@babel+core@7.28.4_@types+node@24.2.0",
     "npm:clsx@^2.1.1": "2.1.1",
     "npm:dayjs@^1.11.18": "1.11.18",
+    "npm:drizzle-kit@*": "0.31.5_esbuild@0.25.11",
     "npm:drizzle-kit@~0.31.4": "0.31.5_esbuild@0.25.11",
     "npm:drizzle-orm@~0.44.2": "0.44.6_knex@3.1.0_pg@8.16.3_postgres@3.4.7",
     "npm:knex@^3.1.0": "3.1.0",
@@ -51,9 +51,10 @@
     "npm:postgres@^3.4.7": "3.4.7",
     "npm:react-dom@^19.1.1": "19.2.0_react@19.2.0",
     "npm:react@^19.1.1": "19.2.0",
-    "npm:recharts@^3.3.0": "3.3.0_react@19.2.0_react-dom@19.2.0__react@19.2.0_react-is@19.2.0_react-redux@9.2.0__@types+react@19.2.2__react@19.2.0__redux@5.0.1_@types+react@19.2.2",
-    "npm:vite@*": "7.1.11_picomatch@4.0.3_@types+node@24.2.0",
-    "npm:vite@^7.1.5": "7.1.11_picomatch@4.0.3_@types+node@24.2.0"
+    "npm:recharts@^3.3.0": "3.3.0_react@19.2.0_react-dom@19.2.0__react@19.2.0_react-is@16.13.1_react-redux@9.2.0__@types+react@19.2.2__react@19.2.0__redux@5.0.1_@types+react@19.2.2",
+    "npm:valibot@^1.2.0": "1.2.0",
+    "npm:vite@*": "7.1.11_@types+node@24.2.0_picomatch@4.0.3",
+    "npm:vite@^7.1.5": "7.1.11_@types+node@24.2.0_picomatch@4.0.3"
   },
   "jsr": {
     "@hono/hono@4.8.10": {
@@ -118,9 +119,6 @@
         "jsr:@std/bytes",
         "jsr:@std/crypto"
       ]
-    },
-    "@valibot/valibot@1.1.0": {
-      "integrity": "2617f02b532011b8140926899d420a3e1bbb0fcb7cdf8e7b669df89e7edd7f5f"
     }
   },
   "npm": {
@@ -356,7 +354,7 @@
         "@babel/helper-validator-identifier"
       ]
     },
-    "@deno/vite-plugin@1.0.5_vite@7.1.11__picomatch@4.0.3_@types+node@24.2.0": {
+    "@deno/vite-plugin@1.0.5_vite@7.1.11__@types+node@24.2.0__picomatch@4.0.3_@types+node@24.2.0": {
       "integrity": "sha512-tLja5n4dyMhcze1NzvSs2iiriBymfBlDCZIrjMTxb9O2ru0gvmV6mn5oBD2teNw5Sd92cj3YJzKwsAs8tMJXlg==",
       "dependencies": [
         "vite"
@@ -704,7 +702,7 @@
         "@jridgewell/sourcemap-codec"
       ]
     },
-    "@mantine/charts@8.3.5_@mantine+core@8.3.5__@mantine+hooks@8.3.5___react@19.2.0__react@19.2.0__react-dom@19.2.0___react@19.2.0__@types+react@19.2.2_@mantine+hooks@8.3.5__react@19.2.0_react@19.2.0_react-dom@19.2.0__react@19.2.0_recharts@3.3.0__react@19.2.0__react-dom@19.2.0___react@19.2.0__react-is@19.2.0__react-redux@9.2.0___@types+react@19.2.2___react@19.2.0___redux@5.0.1__@types+react@19.2.2_@types+react@19.2.2": {
+    "@mantine/charts@8.3.5_@mantine+core@8.3.5__@mantine+hooks@8.3.5___react@19.2.0__react@19.2.0__react-dom@19.2.0___react@19.2.0__@types+react@19.2.2_@mantine+hooks@8.3.5__react@19.2.0_react@19.2.0_react-dom@19.2.0__react@19.2.0_recharts@3.3.0__react@19.2.0__react-dom@19.2.0___react@19.2.0__react-is@16.13.1__react-redux@9.2.0___@types+react@19.2.2___react@19.2.0___redux@5.0.1__@types+react@19.2.2_@types+react@19.2.2": {
       "integrity": "sha512-jXeItISiGZbRPG6YTfh+q4Ii2DSce3Vl9dBX1spbtYz+qnJ9TE3vLUlRA3Vn2JXHR1Nka1CtiGGl26NilC81tQ==",
       "dependencies": [
         "@mantine/core",
@@ -1126,7 +1124,7 @@
         "zod"
       ]
     },
-    "@tanstack/router-plugin@1.133.27_@tanstack+react-router@1.133.27__react@19.2.0__react-dom@19.2.0___react@19.2.0_vite@7.1.11__picomatch@4.0.3_@babel+core@7.28.4_react@19.2.0_react-dom@19.2.0__react@19.2.0_@types+node@24.2.0": {
+    "@tanstack/router-plugin@1.133.27_@tanstack+react-router@1.133.27__react@19.2.0__react-dom@19.2.0___react@19.2.0_vite@7.1.11__@types+node@24.2.0__picomatch@4.0.3_@babel+core@7.28.4_react@19.2.0_react-dom@19.2.0__react@19.2.0_@types+node@24.2.0": {
       "integrity": "sha512-E3WdABr7Vm9UijQKSjoP2Pvq5l1m8cIm/YZIDbcJ3zVQpTKMtSVgWzP1lQUtsUBrU21PBPHsOhc1+ERt832pKQ==",
       "dependencies": [
         "@babel/core",
@@ -1265,7 +1263,7 @@
     "@types/use-sync-external-store@0.0.6": {
       "integrity": "sha512-zFDAD+tlpf2r4asuHEj0XH6pY6i0g5NeAHPn+15wk3BV6JA69eERFXC1gyGThDkVa1zCyKr5jox1+2LbV/AMLg=="
     },
-    "@vitejs/plugin-react@5.0.4_vite@7.1.11__picomatch@4.0.3_@babel+core@7.28.4_@types+node@24.2.0": {
+    "@vitejs/plugin-react@5.0.4_vite@7.1.11__@types+node@24.2.0__picomatch@4.0.3_@babel+core@7.28.4_@types+node@24.2.0": {
       "integrity": "sha512-La0KD0vGkVkSk6K+piWDKRUyg8Rl5iAIKRMH0vMJI0Eg47bq1eOxmoObAaQG37WMW9MSyk7Cs8EIWwJC1PtzKA==",
       "dependencies": [
         "@babel/core",
@@ -1921,7 +1919,7 @@
       "dependencies": [
         "loose-envify",
         "object-assign",
-        "react-is@16.13.1"
+        "react-is"
       ]
     },
     "react-dom@19.2.0_react@19.2.0": {
@@ -1942,9 +1940,6 @@
     },
     "react-is@16.13.1": {
       "integrity": "sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ=="
-    },
-    "react-is@19.2.0": {
-      "integrity": "sha512-x3Ax3kNSMIIkyVYhWPyO09bu0uttcAIoecO/um/rKGQ4EltYWVYtyiGkS/3xMynrbVQdS69Jhlv8FXUEZehlzA=="
     },
     "react-number-format@5.4.4_react@19.2.0_react-dom@19.2.0__react@19.2.0": {
       "integrity": "sha512-wOmoNZoOpvMminhifQYiYSTCLUDOiUbBunrMrMjA+dV52sY+vck1S4UhR6PkgnoCquvvMSeJjErXZ4qSaWCliA==",
@@ -2048,7 +2043,7 @@
         "tslib"
       ]
     },
-    "recharts@3.3.0_react@19.2.0_react-dom@19.2.0__react@19.2.0_react-is@19.2.0_react-redux@9.2.0__@types+react@19.2.2__react@19.2.0__redux@5.0.1_@types+react@19.2.2": {
+    "recharts@3.3.0_react@19.2.0_react-dom@19.2.0__react@19.2.0_react-is@16.13.1_react-redux@9.2.0__@types+react@19.2.2__react@19.2.0__redux@5.0.1_@types+react@19.2.2": {
       "integrity": "sha512-Vi0qmTB0iz1+/Cz9o5B7irVyUjX2ynvEgImbgMt/3sKRREcUM07QiYjS1QpAVrkmVlXqy5gykq4nGWMz9AS4Rg==",
       "dependencies": [
         "@reduxjs/toolkit",
@@ -2059,7 +2054,7 @@
         "immer",
         "react",
         "react-dom",
-        "react-is@19.2.0",
+        "react-is",
         "react-redux",
         "reselect",
         "tiny-invariant",
@@ -2301,6 +2296,9 @@
     "util-deprecate@1.0.2": {
       "integrity": "sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw=="
     },
+    "valibot@1.2.0": {
+      "integrity": "sha512-mm1rxUsmOxzrwnX5arGS+U4T25RdvpPjPN4yR0u9pUBov9+zGVtO84tif1eY4r6zWxVxu3KzIyknJy3rxfRZZg=="
+    },
     "victory-vendor@37.3.6": {
       "integrity": "sha512-SbPDPdDBYp+5MJHhBCAyI7wKM3d5ivekigc2Dk2s7pgbZ9wIgIBYGVw4zGHBml/qTFbexrofXW6Gu4noGxrOwQ==",
       "dependencies": [
@@ -2320,7 +2318,7 @@
         "d3-timer"
       ]
     },
-    "vite@7.1.11_picomatch@4.0.3_@types+node@24.2.0": {
+    "vite@7.1.11_@types+node@24.2.0_picomatch@4.0.3": {
       "integrity": "sha512-uzcxnSDVjAopEUjljkWh8EIrg6tlzrjFUfMcR1EVsRDGwf/ccef0qQPRyOrROwhrTDaApueq+ja+KLPlzR/zdg==",
       "dependencies": [
         "@types/node",
@@ -2360,7 +2358,6 @@
       "jsr:@std/path@^1.1.1",
       "jsr:@std/testing@^1.0.15",
       "jsr:@std/uuid@^1.0.9",
-      "jsr:@valibot/valibot@^1.1.0",
       "npm:@deno/vite-plugin@^1.0.5",
       "npm:@faker-js/faker@^9.9.0",
       "npm:@mantine/charts@^8.3.5",
@@ -2395,6 +2392,7 @@
       "npm:react-dom@^19.1.1",
       "npm:react@^19.1.1",
       "npm:recharts@^3.3.0",
+      "npm:valibot@^1.2.0",
       "npm:vite@^7.1.5"
     ]
   }

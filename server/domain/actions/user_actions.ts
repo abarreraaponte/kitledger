@@ -3,7 +3,6 @@ import { randomBytes } from "node:crypto";
 import { generate as v7 } from "@std/uuid/unstable-v7";
 import { SYSTEM_ADMIN_PERMISSION } from "./permission_actions.ts";
 import { createToken } from "./token_actions.ts";
-import { assembleApiTokenJwtPayload, signToken } from "./jwt_actions.ts";
 import { workerPool } from "../../services/workers/pool.ts";
 import { availableWorkerTasks } from "../../services/workers/worker.ts";
 import { type User } from "../types/auth_types.ts";
@@ -106,7 +105,7 @@ export async function createSuperUser(
 		console.error("Failed to create API token for super user");
 	}
 
-	newSuperUser.api_token = await signToken(assembleApiTokenJwtPayload(apiToken));
+	newSuperUser.api_token = apiToken;
 
 	return newSuperUser;
 }

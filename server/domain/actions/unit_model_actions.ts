@@ -1,5 +1,5 @@
 import { UnitModel, UnitModelCreateData, UnitModelCreateSchema, UnitModelInsert } from "../types/unit_model_types.ts";
-import * as v from "@valibot/valibot";
+import * as v from "valibot";
 import {
 	parseValibotIssues,
 	ValidationError,

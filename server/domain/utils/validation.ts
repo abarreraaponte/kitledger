@@ -1,4 +1,4 @@
-import { type BaseIssue, type IssuePathItem } from "@valibot/valibot";
+import { type BaseIssue, type IssuePathItem } from "valibot";
 
 export type ValidationError = {
 	type: "structure" | "data";

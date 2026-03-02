@@ -1,7 +1,7 @@
 import { InferInsertModel, InferSelectModel } from "drizzle-orm";
 import { transaction_models } from "../../services/database/schema.ts";
-import { InferOutput } from "@valibot/valibot";
-import * as v from "@valibot/valibot";
+import { InferOutput } from "valibot";
+import * as v from "valibot";
 
 export const TransactionModelCreateSchema = v.object({
 	ref_id: v.pipe(v.string(), v.maxLength(64)),

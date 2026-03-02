@@ -4,7 +4,7 @@ import {
 	EntityModelCreateSchema,
 	EntityModelInsert,
 } from "../types/entity_model_types.ts";
-import * as v from "@valibot/valibot";
+import * as v from "valibot";
 import {
 	parseValibotIssues,
 	ValidationError,

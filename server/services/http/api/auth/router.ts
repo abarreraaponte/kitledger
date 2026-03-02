@@ -1,6 +1,5 @@
 import { Hono } from "@hono/hono";
 import { setCookie } from "@hono/hono/cookie";
-import { assembleSessionJwtPayload, signToken } from "../../../../domain/actions/jwt_actions.ts";
 import { validateUserCredentials } from "../../../../domain/repositories/user_repository.ts";
 import { startSession } from "../../../../domain/actions/session_actions.ts";
 import { sessionConfig } from "../../../../config.ts";
@@ -16,9 +15,7 @@ router.post("/login", async (c) => {
 			return c.json({ error: "Invalid credentials" }, 401);
 		}
 
-		const sessionId = await startSession(user.id);
-		const sessionJwtPayload = assembleSessionJwtPayload(sessionId);
-		const sessionToken = await signToken(sessionJwtPayload);
+		const sessionToken = await startSession(user.id);
 
 		// Set the HttpOnly cookie
 		setCookie(c, sessionConfig.cookieName, sessionToken, {

@@ -4,10 +4,10 @@ import { and, eq, gt, isNull } from "drizzle-orm";
 import { verifyPassword } from "../utils/crypto.ts";
 import type { AppUser, Role, Permission } from "../types/auth_types.ts";
 
-export async function getSessionUserId(sessionId: string): Promise<string | null> {
+export async function getSessionUserId(sessionHash: string): Promise<string | null> {
 	const session = await db.query.sessions.findFirst({
 		where: and(
-			eq(sessions.id, sessionId),
+			eq(sessions.hash, sessionHash),
 			gt(sessions.expires_at, new Date()),
 		),
 		columns: {
@@ -17,9 +17,9 @@ export async function getSessionUserId(sessionId: string): Promise<string | null
 	return session ? session.user_id : null;
 }
 
-export async function getTokenUserId(tokenId: string): Promise<string | null> {
+export async function getTokenUserId(tokenHash: string): Promise<string | null> {
 	const token = await db.query.api_tokens.findFirst({
-		where: and(eq(api_tokens.id, tokenId), isNull(api_tokens.revoked_at)),
+		where: and(eq(api_tokens.hash, tokenHash), isNull(api_tokens.revoked_at)),
 		columns: {
 			user_id: true,
 		},
@@ -69,87 +69,87 @@ export async function validateUserCredentials(
 
 export async function getAuthUser(userId: string): Promise<AppUser | null> {
 
-    // 1. Fetch the user and all related data in one go.
-    // This requires the `userRelations` to be correctly defined (see below).
-    const userProfile = await db.query.users.findFirst({
-        where: eq(users.id, userId),
-        columns: {
-            password_hash: false, // Exclude the password hash
-        },
-        with: {
-            // Fetch system permissions (requires relation)
-            system_permissions: true,
-            // Fetch direct permission assignments
-            permissions: {
-                with: {
-                    permission: true, // Include the actual permission details
-                },
-            },
-            // Fetch user_roles
-            roles: {
-                with: {
-                    // For each user_role, fetch the role
-                    role: {
-                        with: {
-                            // For each role, fetch its permission assignments
-                            permissions: {
-                                with: {
-                                    permission: true, // Include the permission details
-                                },
-                            },
-                        },
-                    },
-                },
-            },
-        },
-    });
+	// 1. Fetch the user and all related data in one go.
+	// This requires the `userRelations` to be correctly defined (see below).
+	const userProfile = await db.query.users.findFirst({
+		where: eq(users.id, userId),
+		columns: {
+			password_hash: false, // Exclude the password hash
+		},
+		with: {
+			// Fetch system permissions (requires relation)
+			system_permissions: true,
+			// Fetch direct permission assignments
+			permissions: {
+				with: {
+					permission: true, // Include the actual permission details
+				},
+			},
+			// Fetch user_roles
+			roles: {
+				with: {
+					// For each user_role, fetch the role
+					role: {
+						with: {
+							// For each role, fetch its permission assignments
+							permissions: {
+								with: {
+									permission: true, // Include the permission details
+								},
+							},
+						},
+					},
+				},
+			},
+		},
+	});
 
-    if (!userProfile) {
-        return null;
-    }
+	if (!userProfile) {
+		return null;
+	}
 
-    // 2. Process the nested data to match the AppUser type
+	// 2. Process the nested data to match the AppUser type
 
-    // Get the final list of Role objects
-    const userRoles: Role[] = userProfile.roles.map(
-        (userRole) => userRole.role,
-    );
+	// Get the final list of Role objects
+	const userRoles: Role[] = userProfile.roles.map(
+		(userRole) => userRole.role,
+	);
 
-    // Use a Map to deduplicate permissions
-    const permissionMap = new Map<string, Permission>();
+	// Use a Map to deduplicate permissions
+	const permissionMap = new Map<string, Permission>();
 
-    // Add permissions from roles
-    for (const userRole of userProfile.roles) {
-        for (const permAssignment of userRole.role.permissions) {
-            if (permAssignment.permission) {
-                permissionMap.set(
-                    permAssignment.permission.id,
-                    permAssignment.permission,
-                );
-            }
-        }
-    }
+	// Add permissions from roles
+	for (const userRole of userProfile.roles) {
+		for (const permAssignment of userRole.role.permissions) {
+			if (permAssignment.permission) {
+				permissionMap.set(
+					permAssignment.permission.id,
+					permAssignment.permission,
+				);
+			}
+		}
+	}
 
-    // Add/overwrite with direct permissions
-    for (const permAssignment of userProfile.permissions) {
-        if (permAssignment.permission) {
-            permissionMap.set(
-                permAssignment.permission.id,
-                permAssignment.permission,
-            );
-        }
-    }
+	// Add/overwrite with direct permissions
+	for (const permAssignment of userProfile.permissions) {
+		if (permAssignment.permission) {
+			permissionMap.set(
+				permAssignment.permission.id,
+				permAssignment.permission,
+			);
+		}
+	}
 
-    // Convert the map back to an array
-    const allPermissions = Array.from(permissionMap.values());
+	// Convert the map back to an array
+	const allPermissions = Array.from(permissionMap.values());
 
-    // 3. Construct the final AppUser object
-    const appUser: AppUser = {
-        ...userProfile,
-        roles: userRoles,
-        permissions: allPermissions,
-        system_permissions: userProfile.system_permissions,
-    };
+	// 3. Construct the final AppUser object
+	const appUser: AppUser = {
+		...userProfile,
+		roles: userRoles,
+		permissions: allPermissions,
+		system_permissions: userProfile.system_permissions,
+	};
 
-    return appUser;
+	return appUser;
 }

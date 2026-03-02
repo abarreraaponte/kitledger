@@ -4,7 +4,7 @@ import {
 	TransactionModelCreateSchema,
 	TransactionModelInsert,
 } from "../types/transaction_model_types.ts";
-import * as v from "@valibot/valibot";
+import * as v from "valibot";
 import {
 	parseValibotIssues,
 	ValidationError,

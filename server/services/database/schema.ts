@@ -16,7 +16,7 @@ import { BaseMetaProperty } from "../../domain/utils/base_schema.ts";
 export const api_tokens = pgTable(
 	"api_tokens",
 	{
-		id: uuid("id").primaryKey(),
+		hash: varchar("hash", { length: 64 }).primaryKey(),
 		user_id: uuid("user_id")
 			.notNull()
 			.references(() => users.id),
@@ -59,7 +59,7 @@ export const roles = pgTable("roles", {
 });
 
 export const sessions = pgTable("sessions", {
-	id: uuid("id").primaryKey(),
+	hash: varchar("hash", { length: 64 }).primaryKey(),
 	user_id: uuid("user_id")
 		.notNull()
 		.references(() => users.id),

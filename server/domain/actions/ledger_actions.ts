@@ -1,5 +1,5 @@
 import { Ledger, LedgerCreateData, LedgerCreateSchema, LedgerInsert } from "../types/ledger_types.ts";
-import * as v from "@valibot/valibot";
+import * as v from "valibot";
 import {
 	parseValibotIssues,
 	ValidationError,

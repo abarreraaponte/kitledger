@@ -1,14 +1,8 @@
-import { AlgorithmTypes } from "@hono/hono/utils/jwt/jwa";
-
 /*
  * 1) Define the types
  */
 
-type AuthConfig = {
-	secret: string;
-	pastSecrets: string[];
-	jwtAlgorithm: AlgorithmTypes;
-};
+type AuthConfig = Record<string, never>;
 
 type CorsConfig = {
 	origin: string | string[];
@@ -45,17 +39,6 @@ type WorkerConfig = {
  * 2) Define the logic for complex values.
  */
 
-/**
- * Authentication secrets configuration values and defaults.
- */
-const jwtAlgorithm = "HS256" as AlgorithmTypes;
-
-const authSecret = Deno.env.get("KL_AUTH_SECRET");
-if (!authSecret) {
-	throw new Error("KL_AUTH_SECRET environment variable is not set.");
-}
-const pastSecretsString = Deno.env.get("KL_AUTH_PAST_SECRETS");
-const pastSecrets = pastSecretsString ? pastSecretsString.split(",") : [];
 
 /**
  * CORS configuration values and defaults.
@@ -97,11 +80,7 @@ const workerMaxQueueSize = Deno.env.get("KL_WORKER_MAX_QUEUE_SIZE")
  * Export pre-assembled configuration values for authentication.
  * Values are a mix of environment variables and defaults.
  */
-export const authConfig: AuthConfig = {
-	secret: authSecret,
-	pastSecrets: pastSecrets,
-	jwtAlgorithm: jwtAlgorithm,
-};
+export const authConfig: AuthConfig = {};
 
 /**
  * Export pre-assembled configuration values for the database.

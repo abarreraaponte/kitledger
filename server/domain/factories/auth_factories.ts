@@ -60,7 +60,7 @@ export class UserRoleFactory extends BaseFactory<UserRole> {
 }
 
 const makeApiToken = (): ApiToken => ({
-	id: faker.string.uuid(),
+	hash: faker.string.uuid(),
 	user_id: faker.string.uuid(),
 	name: faker.lorem.word(),
 	revoked_at: faker.datatype.boolean() ? faker.date.recent() : null,

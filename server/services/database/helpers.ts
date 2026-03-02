@@ -1,5 +1,5 @@
 import { timestamp } from "drizzle-orm/pg-core";
-import * as v from "@valibot/valibot";
+import * as v from "valibot";
 
 /**
  * Common database helper for timestamps

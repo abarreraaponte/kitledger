@@ -42,7 +42,6 @@
 		"@tanstack/router-plugin": "npm:@tanstack/router-plugin@^1.133.27",
 		"@types/react": "npm:@types/react@^19.1.13",
 		"@types/react-dom": "npm:@types/react-dom@^19.1.9",
-		"@valibot/valibot": "jsr:@valibot/valibot@^1.1.0",
 		"@vitejs/plugin-react": "npm:@vitejs/plugin-react@^5.0.2",
 		"clsx": "npm:clsx@^2.1.1",
 		"dayjs": "npm:dayjs@^1.11.18",
@@ -58,6 +57,7 @@
 		"react": "npm:react@^19.1.1",
 		"react-dom": "npm:react-dom@^19.1.1",
 		"recharts": "npm:recharts@^3.3.0",
+		"valibot": "npm:valibot@^1.2.0",
 		"vite": "npm:vite@^7.1.5"
 	},
 	"nodeModulesDir": "auto",

@@ -10,7 +10,7 @@ import {
 	QueryResultRow,
 	QueryResultSchema,
 } from "./helpers.ts";
-import * as v from "@valibot/valibot";
+import * as v from "valibot";
 import knex, { Knex } from "knex";
 
 /**
@@ -271,29 +271,29 @@ export function buildQuery(
 
 // --- Base Filter Schemas ---
 const BaseConditionSchema = v.object({
-    column: v.string(),
+	column: v.string(),
 });
 
 /**
  * Schema for parsing array condition values (e.g., 'in', 'not_in' operators)
  */
 const ArrayValueConditionSchema = v.intersect([
-    BaseConditionSchema,
-    v.object({
-        operator: v.union([v.literal('in'), v.literal('not_in')]),
-        value: v.array(v.union([v.string(), v.number(), v.boolean()])),
-    }),
+	BaseConditionSchema,
+	v.object({
+		operator: v.union([v.literal('in'), v.literal('not_in')]),
+		value: v.array(v.union([v.string(), v.number(), v.boolean()])),
+	}),
 ]);
 
 /**
  * Schema for parsing date condition values (e.g., 'equal', 'gt', 'lt' operators)
  */
 const DateValueConditionSchema = v.intersect([
-    BaseConditionSchema,
-    v.object({
-        operator: v.union([ v.literal('equal'), v.literal('not_equal'), v.literal('gt'), v.literal('gtequal'), v.literal('lt'), v.literal('ltequal'), v.literal('empty'), v.literal('not_empty')]),
-        value: v.pipe(v.string(), v.isoDateTime())
-    }),
+	BaseConditionSchema,
+	v.object({
+		operator: v.union([v.literal('equal'), v.literal('not_equal'), v.literal('gt'), v.literal('gtequal'), v.literal('lt'), v.literal('ltequal'), v.literal('empty'), v.literal('not_empty')]),
+		value: v.pipe(v.string(), v.isoDateTime())
+	}),
 ]);
 
 /**
@@ -302,7 +302,7 @@ const DateValueConditionSchema = v.intersect([
 const NumericValueConditionSchema = v.intersect([
 	BaseConditionSchema,
 	v.object({
-		operator: v.union([ v.literal('equal'), v.literal('not_equal'), v.literal('gt'), v.literal('gtequal'), v.literal('lt'), v.literal('ltequal'), v.literal('empty'), v.literal('not_empty')]),
+		operator: v.union([v.literal('equal'), v.literal('not_equal'), v.literal('gt'), v.literal('gtequal'), v.literal('lt'), v.literal('ltequal'), v.literal('empty'), v.literal('not_empty')]),
 		value: v.union([v.number(), v.boolean()]),
 	}),
 ]);
@@ -313,7 +313,7 @@ const NumericValueConditionSchema = v.intersect([
 const TextValueConditionSchema = v.intersect([
 	BaseConditionSchema,
 	v.object({
-		operator: v.union([ v.literal('equal'), v.literal('not_equal'), v.literal('contains'), v.literal('empty'), v.literal('like'), v.literal('not_empty'), v.literal('starts_with'), v.literal('ends_with')]),
+		operator: v.union([v.literal('equal'), v.literal('not_equal'), v.literal('contains'), v.literal('empty'), v.literal('like'), v.literal('not_empty'), v.literal('starts_with'), v.literal('ends_with')]),
 		value: v.union([v.string(), v.boolean()]),
 	}),
 ]);
@@ -322,9 +322,9 @@ const TextValueConditionSchema = v.intersect([
  * Schema for parsing any condition value
  */
 export const ConditionSchema = v.union([
-    ArrayValueConditionSchema,
-    DateValueConditionSchema,
-    NumericValueConditionSchema,
+	ArrayValueConditionSchema,
+	DateValueConditionSchema,
+	NumericValueConditionSchema,
 	TextValueConditionSchema,
 ]);
 
@@ -332,10 +332,10 @@ export const ConditionSchema = v.union([
  * Recursive Schema for parsing a group of conditions combined with a logical connector ('and'/'or')
  */
 export const ConditionGroupSchema: v.GenericSchema<ConditionGroup> = v.lazy(() =>
-    v.object({
-        connector: v.union([v.literal('and'), v.literal('or')]),
-        conditions: v.array(v.union([ConditionSchema, ConditionGroupSchema])),
-    })
+	v.object({
+		connector: v.union([v.literal('and'), v.literal('or')]),
+		conditions: v.array(v.union([ConditionSchema, ConditionGroupSchema])),
+	})
 );
 
 /**
@@ -344,36 +344,36 @@ export const ConditionGroupSchema: v.GenericSchema<ConditionGroup> = v.lazy(() =
  * - The child record's foreign key is 'parent_id'.
  */
 export const RecursiveQuerySchema = v.object({
-  // 'ancestors' walks up the tree from child to parent; 'descendants' walks down.
-  direction: v.union([v.literal('ancestors'), v.literal('descendants')]),
-  // A standard filter to define the starting point of the recursion.
-  startWith: ConditionGroupSchema,
+	// 'ancestors' walks up the tree from child to parent; 'descendants' walks down.
+	direction: v.union([v.literal('ancestors'), v.literal('descendants')]),
+	// A standard filter to define the starting point of the recursion.
+	startWith: ConditionGroupSchema,
 });
 
 /**
  * Schema for parsing a simple column selection (with optional alias)
  */
 export const SimpleColumnSchema = v.object({
-    column: v.string(),
-    as: v.optional(v.string()),
+	column: v.string(),
+	as: v.optional(v.string()),
 });
 
 /**
  * Schema for parsing an aggregate column selection (with function, column, and alias)
  */
 export const AggregateColumnSchema = v.object({
-    func: v.union([ v.literal('sum'), v.literal('avg'), v.literal('count'), v.literal('min'), v.literal('max')]),
-    column: v.string(),
-    as: v.string(),
+	func: v.union([v.literal('sum'), v.literal('avg'), v.literal('count'), v.literal('min'), v.literal('max')]),
+	column: v.string(),
+	as: v.string(),
 });
 
 /**
  * Schema for parsing any column selection (simple or aggregate)
  */
 export const ColumnSchema = v.union([
-    v.string(),
-    AggregateColumnSchema,
-    SimpleColumnSchema
+	v.string(),
+	AggregateColumnSchema,
+	SimpleColumnSchema
 ]);
 
 /**
@@ -396,27 +396,27 @@ export const JoinSchema = v.object({
  * Schema for parsing an order by clause (column and direction)
  */
 export const OrderSchema = v.object({
-    column: v.string(),
-    direction: v.union([v.literal('asc'), v.literal('desc')]),
+	column: v.string(),
+	direction: v.union([v.literal('asc'), v.literal('desc')]),
 });
 
 /**
  * Schema for parsing a complete query with selections, conditions, ordering, grouping, limits, and offsets
  */
 export const QuerySchema = v.object({
-    select: v.array(ColumnSchema),
+	select: v.array(ColumnSchema),
 	recursive: v.optional(RecursiveQuerySchema),
 	joins: v.optional(v.array(JoinSchema)),
 	where: v.array(ConditionGroupSchema),
-    orderBy: v.optional(v.array(OrderSchema)),
-    groupBy: v.optional(v.array(v.string())),
-    limit: v.optional(v.pipe(
+	orderBy: v.optional(v.array(OrderSchema)),
+	groupBy: v.optional(v.array(v.string())),
+	limit: v.optional(v.pipe(
 		v.number(),
 		v.integer(),
 		v.minValue(1),
 		v.maxValue(1000)
 	)),
-    offset: v.optional(v.pipe(
+	offset: v.optional(v.pipe(
 		v.number(),
 		v.integer(),
 		v.minValue(0)
@@ -427,8 +427,8 @@ export const QuerySchema = v.object({
  * Condition Group type (recursive)
  */
 export type ConditionGroup = {
-    connector: 'and' | 'or';
-    conditions: (v.InferOutput<typeof ConditionSchema> | ConditionGroup)[];
+	connector: 'and' | 'or';
+	conditions: (v.InferOutput<typeof ConditionSchema> | ConditionGroup)[];
 };
 
 /**

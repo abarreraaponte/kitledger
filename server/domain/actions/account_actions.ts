@@ -1,5 +1,5 @@
 import { Account, AccountCreateData, AccountCreateSchema, AccountInsert } from "../types/account_types.ts";
-import * as v from "@valibot/valibot";
+import * as v from "valibot";
 import {
 	parseValibotIssues,
 	ValidationError,
