@@ -40,7 +40,7 @@
 	"nodeModulesDir": "auto",
 	"tasks": {
 		"build": "deno run -A npm:vite build",
-		"compile": "deno compile -A --include ./src/services/database/migrations --output ./kitledger ./src/main.ts",
+		"compile": "deno compile -A --include ./src/services/database/migrations --output ./dist/bin/kitledger ./src/main.ts",
 		"db:custom": "deno run -A npm:drizzle-kit generate --custom",
 		"db:generate": "deno run -A npm:drizzle-kit generate",
 		"dev": "deno run -A --watch --env-file --unstable-worker-options ./src/main.ts & deno run -A npm:vite",

@@ -6,6 +6,11 @@ import { join } from "@std/path/join";
 import { runMigrations } from "./services/database/db.ts";
 import { serverConfig } from "./config.ts";
 import { execute } from "./setup.ts";
+import duckdb from '@duckdb/node-api';
+
+console.log(duckdb.version());
+
+console.log(duckdb.configurationOptionDescriptions());
 
 // Read the migrations directory for the compiled executable to work.
 Deno.readDirSync(import.meta.dirname + "/services/database/migrations");
