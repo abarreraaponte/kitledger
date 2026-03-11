@@ -8,7 +8,7 @@ export default defineConfig({
 		deno(),
 		vue(),
 	],
-	root: "client",
+	root: "src/client",
 	server: {
 		proxy: {
 			"/api": "http://localhost:8888",
@@ -16,7 +16,7 @@ export default defineConfig({
 	},
 	build: {
 		assetsDir: "assets",
-		outDir: "../dist/client",
+		outDir: "../../dist/client",
 		emptyOutDir: true,
 	},
 });

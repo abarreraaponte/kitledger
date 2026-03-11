@@ -1,5 +1,5 @@
-import { workerPool } from "../../server/services/workers/pool.ts";
-import { availableWorkerTasks } from "../../server/services/workers/worker.ts";
+import { workerPool } from "../../src/services/workers/pool.ts";
+import { availableWorkerTasks } from "../../src/services/workers/worker.ts";
 import { assert } from "@std/assert";
 import { generate } from "@std/uuid/unstable-v7";
 

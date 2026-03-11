@@ -1,11 +1,11 @@
 import { assert } from "@std/assert";
 import { afterAll, describe, it } from "@std/testing/bdd";
-import { db } from "../../server/services/database/db.ts";
-import { createLedger } from "../../server/domain/actions/ledger_actions.ts";
-import { createAccount } from "../../server/domain/actions/account_actions.ts";
-import { AccountFactory, LedgerFactory } from "../../server/domain/factories/ledger_factories.ts";
-import { UnitModelFactory } from "../../server/domain/factories/unit_factories.ts";
-import { createUnitModel } from "../../server/domain/actions/unit_model_actions.ts";
+import { db } from "../../src/services/database/db.ts";
+import { createLedger } from "../../src/domain/actions/ledger_actions.ts";
+import { createAccount } from "../../src/domain/actions/account_actions.ts";
+import { AccountFactory, LedgerFactory } from "../../src/domain/factories/ledger_factories.ts";
+import { UnitModelFactory } from "../../src/domain/factories/unit_factories.ts";
+import { createUnitModel } from "../../src/domain/actions/unit_model_actions.ts";
 import { generate } from "@std/uuid/unstable-v7";
 
 describe("Ledger Domain Tests", () => {

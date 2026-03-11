@@ -1,7 +1,7 @@
 import { assert } from "@std/assert";
-import { auth } from "../../server/services/http/middleware/auth_middleware.ts";
+import { auth } from "../../src/services/http/middleware/auth_middleware.ts";
 import { Context } from "@hono/hono";
-import { serverConfig } from "../../server/config.ts";
+import { serverConfig } from "../../src/config.ts";
 
 Deno.test("Hono Auth middleware returns 401 for missing token", async () => {
 	const c = {
@@ -19,10 +19,10 @@ Deno.test("Hono Auth middleware returns 401 for missing token", async () => {
 		env: {},
 		finalized: false,
 		get: () => undefined,
-		set: () => {},
+		set: () => { },
 	} as unknown as Context;
 
-	await auth(c, async () => {});
+	await auth(c, async () => { });
 });
 
 Deno.test("CORS Server Configuration is set correctly", () => {

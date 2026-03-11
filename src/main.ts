@@ -7,6 +7,9 @@ import { runMigrations } from "./services/database/db.ts";
 import { serverConfig } from "./config.ts";
 import { execute } from "./setup.ts";
 
+// Read the migrations directory for the compiled executable to work.
+Deno.readDirSync(import.meta.dirname + "/services/database/migrations");
+
 await runMigrations();
 
 // --- Server and CLI Startup Logic ---

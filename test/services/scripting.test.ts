@@ -1,5 +1,5 @@
 import { assert } from "@std/assert";
-import { executeScript } from "../../server/services/scripting/runtime.ts";
+import { executeScript } from "../../src/services/scripting/runtime.ts";
 
 Deno.test("Kit Action Script Benchmark - 1,000 Concurrent Executions", async () => {
 	const preCompiledUserCode = `

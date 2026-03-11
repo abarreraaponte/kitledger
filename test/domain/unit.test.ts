@@ -1,8 +1,8 @@
 import { assert } from "@std/assert";
 import { afterAll, describe, it } from "@std/testing/bdd";
-import { db } from "../../server/services/database/db.ts";
-import { UnitModelFactory } from "../../server/domain/factories/unit_factories.ts";
-import { createUnitModel } from "../../server/domain/actions/unit_model_actions.ts";
+import { db } from "../../src/services/database/db.ts";
+import { UnitModelFactory } from "../../src/domain/factories/unit_factories.ts";
+import { createUnitModel } from "../../src/domain/actions/unit_model_actions.ts";
 
 describe("Unit Domain Tests", () => {
 	afterAll(async () => {
