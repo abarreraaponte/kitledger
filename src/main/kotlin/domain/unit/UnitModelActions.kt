@@ -7,12 +7,11 @@ import com.kitledger.services.validation.toNativeValidationResult
 import com.kitledger.services.utils.generateUuidV7
 import com.kitledger.services.validation.ActionResult
 import com.kitledger.services.validation.ValidationResult
-import io.r2dbc.spi.R2dbcException
 import org.jetbrains.exposed.v1.exceptions.ExposedSQLException
 import kotlin.time.Clock
 import kotlin.time.ExperimentalTime
-import org.jetbrains.exposed.v1.r2dbc.insert
-import org.jetbrains.exposed.v1.r2dbc.transactions.suspendTransaction
+import org.jetbrains.exposed.v1.jdbc.insert
+import org.jetbrains.exposed.v1.jdbc.transactions.suspendTransaction
 
 suspend fun createUnitModel(data : UnitModelInsert) : ActionResult<UnitModel> {
 
@@ -41,7 +40,7 @@ suspend fun createUnitModel(data : UnitModelInsert) : ActionResult<UnitModel> {
         ActionResult.Success(unitModel)
     }
 
-    catch(e: R2dbcException) {
+    catch(e: ExposedSQLException) {
         ActionResult.ActionFailure("Database error")
     }
 

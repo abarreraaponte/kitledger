@@ -6,7 +6,7 @@ import com.kitledger.services.database.SessionsTable
 import kotlinx.coroutines.flow.firstOrNull
 import org.jetbrains.exposed.v1.core.ResultRow
 import org.jetbrains.exposed.v1.core.eq
-import org.jetbrains.exposed.v1.r2dbc.select
+import org.jetbrains.exposed.v1.jdbc.select
 import java.util.UUID
 import kotlin.time.ExperimentalTime
 

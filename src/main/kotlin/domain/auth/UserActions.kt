@@ -5,8 +5,8 @@ package com.kitledger.domain.auth
 import com.kitledger.services.database.SystemPermissionsTable
 import com.kitledger.services.database.UsersTable
 import com.kitledger.services.utils.generateUuidV7
-import org.jetbrains.exposed.v1.r2dbc.insert
-import org.jetbrains.exposed.v1.r2dbc.transactions.suspendTransaction
+import org.jetbrains.exposed.v1.jdbc.insert
+import org.jetbrains.exposed.v1.jdbc.transactions.suspendTransaction
 import kotlin.random.Random
 import kotlin.time.Clock
 import kotlin.time.ExperimentalTime

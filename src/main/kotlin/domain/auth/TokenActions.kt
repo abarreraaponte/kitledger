@@ -4,7 +4,7 @@ package com.kitledger.domain.auth
 
 import com.kitledger.services.database.ApiTokensTable
 import com.kitledger.services.utils.generateUuidV7
-import org.jetbrains.exposed.v1.r2dbc.insert
+import org.jetbrains.exposed.v1.jdbc.insert
 import java.util.*
 import kotlin.time.Clock
 import kotlin.time.ExperimentalTime
