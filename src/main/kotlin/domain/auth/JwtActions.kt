@@ -4,7 +4,7 @@ import com.auth0.jwt.JWT
 import com.auth0.jwt.algorithms.Algorithm
 import com.auth0.jwt.exceptions.JWTVerificationException
 import com.auth0.jwt.interfaces.DecodedJWT
-import com.kitledger.services.config.AppConfig
+import com.kitledger.services.config.Config
 import java.util.*
 
 /**
@@ -26,7 +26,7 @@ data class JwtPayload(
 fun signToken(tokenType: TokenType, tokenId: UUID): String? {
 
     try {
-        val currentSecret = AppConfig.authConfig.secret
+        val currentSecret = Config.auth.secret
         val algorithm = Algorithm.HMAC256(currentSecret)
         val token = JWT.create()
             .withClaim("tokenType", tokenType.toString())
@@ -45,7 +45,7 @@ fun signToken(tokenType: TokenType, tokenId: UUID): String? {
  * @return the decoded JWT payload, or null if the token is invalid.
  */
 fun verifyToken(token: String): JwtPayload? {
-    val allSecrets = listOf(AppConfig.authConfig.secret) + AppConfig.authConfig.pastSecrets
+    val allSecrets = listOf(Config.auth.secret) + Config.auth.pastSecrets
 
     val decodedJwt: DecodedJWT? = allSecrets.firstNotNullOfOrNull { secret ->
         try {

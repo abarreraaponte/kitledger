@@ -1,6 +1,6 @@
 package com.kitledger.services.database
 
-import com.kitledger.services.config.AppConfig
+import com.kitledger.services.config.Config
 import com.zaxxer.hikari.HikariConfig
 import com.zaxxer.hikari.HikariDataSource
 import org.jetbrains.exposed.v1.jdbc.Database
@@ -11,11 +11,11 @@ import org.jetbrains.exposed.v1.jdbc.Database
  */
 object DatabaseFactory {
     fun init() {
-        val config = AppConfig.dbConfig
+        val config = Config.db
         val hikariConfig = HikariConfig().apply {
             jdbcUrl = config.url
             driverClassName = "org.postgresql.Driver"
-            maximumPoolSize = config.max
+            maximumPoolSize = config.maxConnections
             isAutoCommit = false
             transactionIsolation = "TRANSACTION_REPEATABLE_READ"
         }

@@ -3,6 +3,7 @@ val auth0JwtVersion: String by project
 val exposedVersion: String by project
 val flywayVersion: String by project
 val hikaricpVersion: String by project
+val hopliteVersion: String by project
 val jdbcPostgresDriverVersion: String by project
 val konformVersion: String by project
 val kotlinVersion: String by project
@@ -46,6 +47,8 @@ dependencies {
     implementation("de.mkammerer:argon2-jvm:$argon2JvmVersion")
     implementation("com.fasterxml.uuid:java-uuid-generator:$uuidGeneratorVersion")
     implementation("io.konform:konform-jvm:$konformVersion")
+    implementation("com.sksamuel.hoplite:hoplite-core:$hopliteVersion")
+    implementation("com.sksamuel.hoplite:hoplite-hocon:$hopliteVersion")
     testImplementation("io.ktor:ktor-server-test-host")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlinVersion")
 }

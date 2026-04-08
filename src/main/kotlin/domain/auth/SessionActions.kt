@@ -2,7 +2,7 @@
 
 package com.kitledger.domain.auth
 
-import com.kitledger.services.config.AppConfig
+import com.kitledger.services.config.Config
 import com.kitledger.services.database.SessionsTable
 import com.kitledger.services.utils.generateUuidV7
 import org.jetbrains.exposed.v1.jdbc.insert
@@ -19,7 +19,7 @@ import kotlin.time.ExperimentalTime
 suspend fun startSession(userId: UUID): Session? {
 
     try {
-        val sessionConfig = AppConfig.sessionConfig
+        val sessionConfig = Config.session
         val sessionId = generateUuidV7()
         val sessionResult = SessionsTable.insert {
             it[SessionsTable.id] = sessionId

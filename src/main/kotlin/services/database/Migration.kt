@@ -1,6 +1,6 @@
 package com.kitledger.services.database
 
-import com.kitledger.services.config.AppConfig
+import com.kitledger.services.config.Config
 import org.flywaydb.core.Flyway
 
 /**
@@ -8,7 +8,7 @@ import org.flywaydb.core.Flyway
  */
 object Migration {
     fun run() {
-        val config = AppConfig.dbConfig
+        val config = Config.db
         val jdbcUrl = config.url
 
         val flyway = Flyway.configure()
